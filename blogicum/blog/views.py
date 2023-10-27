@@ -119,7 +119,8 @@ class PostDetailView(DetailView):
         context['comments'] = (
             self.object.comments.select_related('author')
         )
-        if not self.object.is_published and self.object.author != self.request.user:
+        if (not self.object.is_published
+                and self.object.author != self.request.user):
             raise Http404()
         return context
 
