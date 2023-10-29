@@ -55,7 +55,7 @@ class Location(PublishedModel):
 
 
 class Post(PublishedModel):
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=MAX_TITLE_LENGTH)
     text = models.TextField(verbose_name='Текст')
     pub_date = models.DateTimeField(
         verbose_name='Дата и время публикации',
@@ -104,7 +104,7 @@ class Comment(PublishedModel):
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
-        verbose_name="Добавлено"
+        verbose_name='Добавлено'
     )
 
     class Meta:

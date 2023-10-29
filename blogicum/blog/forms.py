@@ -20,7 +20,7 @@ class PostEditForm(forms.ModelForm):
             'comment': forms.Textarea(),
             'pub_date': forms.DateTimeInput(
                 format="%Y-%m-%d %H:%M:%S",
-                attrs={'type': 'date'}),
+                attrs={'type': 'datetime-local'}),
         }
 
 
