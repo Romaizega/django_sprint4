@@ -25,7 +25,7 @@ class Category(PublishedModel):
         max_length=MAX_TITLE_LENGTH,
         verbose_name='Заголовок'
     )
-    description = models.TextField(default=True, verbose_name='Описание')
+    description = models.TextField(verbose_name='Описание')
     slug = models.SlugField(
         unique=True,
         verbose_name='Идентификатор',
@@ -96,17 +96,22 @@ class Comment(PublishedModel):
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
-        related_name='comments',
     )
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         verbose_name='Автор комментария',
-        related_name='comments'
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Добавлено"
     )
 
     class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+        default_related_name = 'comments'
         ordering = ('created_at',)
 
     def __str__(self):
-        return self.text
+        return self.text[:20]

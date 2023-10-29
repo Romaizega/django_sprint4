@@ -18,7 +18,9 @@ class PostEditForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(),
             'comment': forms.Textarea(),
-            'pub_date': forms.DateInput(attrs={'type': 'date'}),
+            'pub_date': forms.DateTimeInput(
+                format="%Y-%m-%d %H:%M:%S",
+                attrs={'type': 'date'}),
         }
 
 
@@ -26,4 +28,4 @@ class UserEditForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ('first_name', 'last_name', 'username', 'email')

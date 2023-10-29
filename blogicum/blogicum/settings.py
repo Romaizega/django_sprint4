@@ -136,10 +136,10 @@ MEDIA_URL = '/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 CSRF_FAILURE_VIEW = 'pages.views.csrf_failure'
 
 LOGIN_REDIRECT_URL = 'blog:index'
 
 LOGIN_URL = 'login'
+
+MAX_POST_ON_PAGE = 10
