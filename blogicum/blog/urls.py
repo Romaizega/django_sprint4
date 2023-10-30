@@ -9,7 +9,7 @@ urlpatterns = [
     path('category/<slug:category_slug>/',
          views.CategoryListView.as_view(), name='category_posts'),
     path(
-        'posts/<int:pk>/', views.PostDetailView.as_view(),
+        'posts/<int:post_id>/', views.PostDetailView.as_view(),
         name='post_detail'
     ),
     path(

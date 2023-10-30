@@ -33,7 +33,6 @@ def create_queryset(manager=Post.objects, filters=True, annotations=True):
 
 
 class IndexListView(ListView):
-    model = Post
     queryset = create_queryset()
     template_name = 'blog/index.html'
     ordering = '-pub_date'
@@ -96,7 +95,7 @@ def add_comment(request, post_id):
         commentary.author = request.user
         commentary.post = comment
         commentary.save()
-    return redirect('blog:post_detail', pk=post_id)
+    return redirect('blog:post_detail', post_id=post_id)
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
@@ -117,6 +116,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostDetailView(DetailView):
     model = Post
+    pk_url_kwarg = 'post_id'
     template_name = 'blog/detail.html'
     paginate_by = settings.MAX_POST_ON_PAGE
 
@@ -177,7 +177,7 @@ class PostUpdateView(CommonPostMixin, LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('blog:post_detail',
-                            kwargs={'pk': self.object.pk})
+                            kwargs={'post_id': self.object.pk})
 
 
 class PostDeleteView(CommonPostMixin, LoginRequiredMixin, DeleteView):
@@ -214,7 +214,7 @@ class CommentMixin:
 
     def get_success_url(self):
         return reverse_lazy('blog:post_detail',
-                            kwargs={'pk': self.kwargs.get('post_id')})
+                            kwargs={'post_id': self.kwargs.get('post_id')})
 
 
 class CommentUpdateView(LoginRequiredMixin, CommentMixin, UpdateView):
