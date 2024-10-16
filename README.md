@@ -1,46 +1,45 @@
-# Проект "Blogicum" (django_sprint4)
+# Project "Blogicum"
 
-Основные возможности:
+Main Features:
 
-- регистрация нового пользователя;
-- написание публикаций, их редактирование и удаление;
-- просмотр чужих публикаций, возможность оставлять и редактировать комментарии;
-- чтение публикаций в интересующей категории;
-- гибкая настройка панели администратора.
+- Registration of a new user
+- Writing, editing, and deleting posts
+- Viewing others' posts, with the ability to leave and edit comments
+- Reading posts in an interesting category
+- Flexible configuration of the admin panel
+- The Blogicum project is an educational application developed using the Django framework. It provides a multitude of useful tools and functionalities for creating a social network. Here are the main features and tools used in the project:
 
-Проект Blogicum представляет собой учебное приложение, разработанное с использованием фреймворка Django. Он обеспечивает множество полезных инструментов и функциональности для создания социальной сети. Вот основные возможности и инструменты, которые используются в проекте:
+### Registration and Login Tools
+Users can create accounts and log in with a username and password.
 
-### Инструменты регистрации и входа под своей учетной записью
-Пользователи могут создавать учетные записи и входить в систему с помощью логина и пароля.
+### Password Recovery Settings
+Users can reset their passwords if forgotten by using the recovery procedure.
 
-### Инструменты настройки восстановления пароля
-Пользователи могут сбросить свой пароль, если забыли его, используя процедуру восстановления.
+### Full CRUD Implementation Tools for Author Posts
+Authors can create, read, update, and delete their posts.
 
-### Инструменты реализации полного CRUD для публикаций автора
-Авторы могут создавать, читать, обновлять и удалять свои публикации.
+### Full CRUD Implementation Tools for Author Comments
+Users can create, view, update, and delete their comments on posts.
 
-### Инструменты реализации полного CRUD для комментариев автора
-Пользователи могут создавать, просматривать, обновлять и удалять свои комментарии к публикациям.
+### Settings for Posts Hidden by the Administrator and Available Only to the Author
+The ability to hide posts by the administrator or make them available only to the author.
 
-### Настройки для публикаций, убранных администратором и доступных только автору
-Возможность скрыть публикации, администратором или сделать их доступными только для автора.
+### Tools for Attaching Images to Posts
+Users can attach images to their posts to illustrate the content.
 
-### Инструменты прикрепления изображений к публикациям
-Пользователи могут прикреплять изображения к своим публикациям для иллюстрации содержания.
+### Pagination Settings for Posts and Comments
+Breaking long lists of posts and comments into pages for improved usability.
 
-### Настройки пагинации для публикаций и комментариев
-Разбиение длинных списков публикаций и комментариев на страницы для улучшения удобства пользования.
+### SBV Classes, Mixins
+Using inherited classes to implement specific functionalities.
 
-### SBV-классы, mixins
-Использование классов-наследников для реализации определенных функциональностей.
+### Email Sending Tools
+The ability to send email notifications to users, such as during password resets.
 
-### Инструменты для отправки электронных писем
-Возможность отправлять электронные уведомления пользователям, например, при сбросе пароля.
+### Custom HTTPResponse Error Pages
+Configuring custom pages to display error information when accessing the web application.
 
-### Кастомные страницы HTTPResponse ошибок
-Настройка кастомных страниц для отображения информации об ошибках при обращении к веб-приложению.
+### Fully Informative Admin Dashboard
+Administrators can manage users, posts, and other aspects of the application through a user-friendly admin interface.
 
-### Созданная полноценная информативная панель администратора
-Администратор может управлять пользователями, публикациями и другими аспектами приложения через удобный интерфейс администратора.
-
-Все эти инструменты и функциональности помогают создать мощное и гибкое веб-приложение для социальной сети на базе Django.
+All these tools and functionalities help create a powerful and flexible web application for a social network based on Django.
